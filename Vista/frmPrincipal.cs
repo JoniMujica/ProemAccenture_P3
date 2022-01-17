@@ -13,8 +13,9 @@ namespace Vista
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            DetalleCliente detalleCliente = new DetalleCliente(negocio,this);
+            DetalleCliente detalleCliente = new DetalleCliente(negocio/*,this*/);
             detalleCliente.ShowDialog();
+            ActualizarClientes();
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)

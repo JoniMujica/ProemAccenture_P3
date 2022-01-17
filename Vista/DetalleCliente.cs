@@ -14,30 +14,34 @@ namespace Vista
     public partial class DetalleCliente : Form
     {
         Negocio negocio;
-        FrmPrincipal frmPrincipal;
+        //FrmPrincipal frmPrincipal;
         public DetalleCliente()
         {
             InitializeComponent();
             negocio = new Negocio();
-            frmPrincipal = new FrmPrincipal();
+            //frmPrincipal = new FrmPrincipal();
         }
-        public DetalleCliente(Negocio negocio,FrmPrincipal frmPrincipal):this()
+        public DetalleCliente(Negocio negocio/*,FrmPrincipal frmPrincipal*/):this()
         {
             this.negocio = negocio;
-            this.frmPrincipal = frmPrincipal;
+            //this.frmPrincipal = frmPrincipal;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente(txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtDireccion.Text);
             negocio.Agregar(cliente);
-            this.frmPrincipal.ActualizarClientes();
+            //this.frmPrincipal.ActualizarClientes();
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
             txtNombre.Text = String.Empty;
             txtApellido.Text = String.Empty;
             txtTelefono.Text = String.Empty;
             txtDireccion.Text = String.Empty;
         }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
 

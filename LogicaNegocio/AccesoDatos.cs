@@ -7,19 +7,27 @@ using System.Data.SqlClient;
 
 namespace LogicaNegocio
 {
-    public class AccesoDatos
+    public static class AccesoDatos
     {
-        public List<Cliente> leerClientes()
+
+        private static SqlConnection connection;
+        private static SqlCommand cmd;
+
+        static AccesoDatos()
+        {
+            connection = new SqlConnection("Server=JONII;Database=proem;Trusted_Connection=True;");
+            cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandType = System.Data.CommandType.Text;
+        }
+        public static List<Cliente> leerClientes()
         {
             List<Cliente> clientes = new List<Cliente>();
-            SqlConnection connection = new SqlConnection("Server=JONII;Database=proem;Trusted_Connection=True;");
 
             try
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
-                cmd.CommandType = System.Data.CommandType.Text; //indica que le vamos a pasar la Query como texto
+
                 cmd.CommandText = "select * from Clientes"; //Ejecuta la consulta
                 SqlDataReader reader = cmd.ExecuteReader(); //ejecuta la consulta y lo formatea en SqlDataReader
 
@@ -44,6 +52,34 @@ namespace LogicaNegocio
             }
 
             return clientes;
+
+        }
+
+        public static void InsertarCliente(Cliente cliente)
+        {
+
+            try
+            {
+                connection.Open();
+                cmd.CommandText = "INSERT INTO Clientes (Nombre,Apellido,Direccion,Telefono)" +
+                                  " VALUES (@nombre,@apellido,@direccion,@telefono)"; //con los @ defino cuales seran las variables la cuales despues asignare valor
+                cmd.Parameters.AddWithValue("@nombre",cliente.Nombre); //aca llamo a la variable definida anteriormente y le asigno un valor
+                cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
 
         }
     }

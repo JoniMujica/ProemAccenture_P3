@@ -9,16 +9,16 @@ namespace LogicaNegocio
     public class Negocio
     {
         List<Cliente> clientes;
-        AccesoDatos accesoDatos;
+        //AccesoDatos accesoDatos;
 
         public Negocio()
         {
             clientes = new List<Cliente>();
-            accesoDatos = new AccesoDatos();
             /*
             {
                 new Cliente("ana","lopez",4546485,"callao 123")
             };*/
+            //accesoDatos = new AccesoDatos();
         }
 
         public List<Cliente> Clientes { get => clientes; set => clientes = value; }
@@ -26,11 +26,19 @@ namespace LogicaNegocio
         public void Agregar(Cliente cliente)
         {
             //cliente.Id = clientes.Count + 1; //revisar
-            clientes.Add(cliente);
+            //clientes.Add(cliente);
+            if (cliente.Id == 0)
+            {
+                AccesoDatos.InsertarCliente(cliente);
+            }
+            else
+            {
+
+            }
         }
         public List<Cliente> LeerClientes()
         {
-            return accesoDatos.leerClientes();
+            return AccesoDatos.leerClientes();
         }
     }
 }
