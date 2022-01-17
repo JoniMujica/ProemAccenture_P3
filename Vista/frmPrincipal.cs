@@ -27,5 +27,12 @@ namespace Vista
             this.dgvClientes.DataSource = null;
             this.dgvClientes.DataSource = negocio.LeerClientes();
         }
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Cliente cliente = dgvClientes.CurrentRow.DataBoundItem as Cliente;
+            DetalleCliente detalleCliente = new DetalleCliente(negocio,cliente);
+            detalleCliente.ShowDialog();
+        }
     }
 }

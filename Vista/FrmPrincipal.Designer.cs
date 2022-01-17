@@ -81,8 +81,9 @@
             this.dgvClientes.RowTemplate.Height = 25;
             this.dgvClientes.Size = new System.Drawing.Size(598, 265);
             this.dgvClientes.TabIndex = 4;
+            this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
-            // frmPrincipal
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +93,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Name = "frmPrincipal";
+            this.Name = "FrmPrincipal";
             this.Text = "Administracion";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();

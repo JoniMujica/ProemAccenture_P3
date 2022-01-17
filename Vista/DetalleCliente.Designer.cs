@@ -149,6 +149,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DetalleCliente";
             this.Text = "DetalleCliente";
+            this.Load += new System.EventHandler(this.DetalleCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

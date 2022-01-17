@@ -14,7 +14,10 @@ namespace Vista
     public partial class DetalleCliente : Form
     {
         Negocio negocio;
+        Cliente cliente;
         //FrmPrincipal frmPrincipal;
+
+
         public DetalleCliente()
         {
             InitializeComponent();
@@ -26,6 +29,10 @@ namespace Vista
             this.negocio = negocio;
             //this.frmPrincipal = frmPrincipal;
         }
+        public DetalleCliente(Negocio negocio,Cliente cliente):this(negocio)
+        {
+            this.cliente = cliente;
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -35,6 +42,14 @@ namespace Vista
             LimpiarFormulario();
 
             DialogResult = DialogResult.OK;
+        }
+
+        private void CargarDatos()
+        {
+            txtNombre.Text = cliente.Nombre;
+            txtApellido.Text = cliente.Apellido;
+            txtTelefono.Text = cliente.Telefono.ToString();
+            txtDireccion.Text = cliente.Direccion;
         }
 
         private void LimpiarFormulario()
@@ -48,6 +63,11 @@ namespace Vista
         {
 
             this.Close();
+        }
+
+        private void DetalleCliente_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
         }
     }
 }
