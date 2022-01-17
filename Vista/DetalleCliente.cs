@@ -33,6 +33,8 @@ namespace Vista
             negocio.Agregar(cliente);
             //this.frmPrincipal.ActualizarClientes();
             LimpiarFormulario();
+
+            DialogResult = DialogResult.OK;
         }
 
         private void LimpiarFormulario()
