@@ -36,7 +36,17 @@ namespace Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtDireccion.Text);
+            if (cliente is null)
+            {
+                cliente = new Cliente(txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtDireccion.Text);
+            }
+            else
+            {
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                cliente.Telefono = int.Parse(txtTelefono.Text);
+                cliente.Direccion = txtDireccion.Text;
+            }
             negocio.Agregar(cliente);
             //this.frmPrincipal.ActualizarClientes();
             LimpiarFormulario();
@@ -67,7 +77,10 @@ namespace Vista
 
         private void DetalleCliente_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            if (cliente != null)
+            {
+                CargarDatos();
+            }
         }
     }
 }

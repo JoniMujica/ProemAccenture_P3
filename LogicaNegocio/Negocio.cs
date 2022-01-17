@@ -33,7 +33,7 @@ namespace LogicaNegocio
             }
             else
             {
-
+                AccesoDatos.ModificarCliente(cliente);
             }
         }
         public List<Cliente> LeerClientes()

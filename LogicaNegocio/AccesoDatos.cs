@@ -69,6 +69,7 @@ namespace LogicaNegocio
                 cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
 
                 cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear(); //limpiar parametros
 
             }
             catch (Exception)
@@ -81,6 +82,28 @@ namespace LogicaNegocio
                 connection.Close();
             }
 
+        }
+        public static void ModificarCliente(Cliente cliente)
+        {
+            try
+            {
+                connection.Open();
+                cmd.CommandText = "UPDATE Clientes SET Nombre = @nombre,Apellido = @apellido,Telefono = @telefono,Direccion = @direccion WHERE Id = @id";
+                cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                cmd.Parameters.AddWithValue("@id", cliente.Id);
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.Clear();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { connection.Close(); }
         }
     }
 }
