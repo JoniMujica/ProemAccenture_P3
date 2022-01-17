@@ -1,0 +1,12 @@
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\bin\Debug\net6.0\LogicaNegocio.deps.json
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\bin\Debug\net6.0\LogicaNegocio.dll
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\bin\Debug\net6.0\ref\LogicaNegocio.dll
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\bin\Debug\net6.0\LogicaNegocio.pdb
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.csproj.AssemblyReference.cache
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.AssemblyInfoInputs.cache
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.AssemblyInfo.cs
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.dll
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\ref\LogicaNegocio.dll
+E:\Multimedia\Documentos\AdministracionDeClientes\LogicaNegocio\obj\Debug\net6.0\LogicaNegocio.pdb
