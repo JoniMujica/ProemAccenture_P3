@@ -24,7 +24,7 @@ namespace Vista
         public void ActualizarClientes()
         {
             this.dgvClientes.DataSource = null;
-            this.dgvClientes.DataSource = negocio.Clientes;
+            this.dgvClientes.DataSource = negocio.LeerClientes();
         }
     }
 }
